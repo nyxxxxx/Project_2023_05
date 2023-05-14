@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物網站</title>
+    <!-- 設計寬度約在1100px左右 -->
+
+    <!-- link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    
+    <!-- css here -->
+    <style>
+        .nav-content {
+            max-width: 65%;
+        }
+        .main-content {
+            max-width: 65%;
+            height: 3000px;
+            padding-top: 126px;
+        }
+        .aside {
+            background-color: bisque;
+        }
+
+        .article {
+            background-color: aquamarine;
+        }
+
+        .category:hover .category-menu {
+            display: block;
+            margin-left: 100px;
+        }
+        .category-container {
+            background-color: rgb(183, 138, 224);
+        }
+
+        /* 輪播部分css */
+        .carousel-container {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .slideimg1 {
+            width: 100%;
+            height: 400px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+        }
+        .img-content {
+            margin: 10px;
+        }
+        .carousel-indicators {
+            position: absolute;
+            bottom: -50px;
+        }
+
+        .carousel-control-next-icon, .carousel-control-prev-icon ,.carousel-indicators > button {
+            background-color: #aaaaaa !important; 
+        }
+
+        h3 {
+            margin-top: 50px;
+        }
+        .popular-product {
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top d-flex flex-wrap">
+
+
+            <div class="nav-content row container-fluid  mx-auto">
+
+                <!-- search bar -->
+                <div class="col-12">
+                    <div class="col-3">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>                        
+                    </div>
+
+                </div>
+                <!-- navbar-icon-col -->
+                <div class="col-3 d-flex justify-content-center align-items-center" style="height: 70px;">
+                    <a class="navbar-brand " href="index.html" >民藝集市</a>
+                </div>
+
+                <!-- navbar-toggler-setting -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- navbar-content-col -->
+                <div class="col-9">
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <!-- 找作品 -->
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">找作品</a>
+                            </li>
+                            <!-- 優惠專區 -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    優惠專區
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">優惠推銷</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">母親節特賣</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">免運專區</a></li>
+                                </ul>
+                            </li>
+                            <!-- 商品誌 -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    商品誌
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">商品誌</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">人物專訪</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">商品理念</a></li>
+                                </ul>
+                            </li>
+                            <!-- 會員中心 -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    會員中心
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">購物車</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">會員中心</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    關於我們
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">網站 & 創作理念</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Dropdown
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li> -->
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <!-- main -->
+    <main>
+        <!-- main content -->
+        <div class="main-content row mx-auto">
+            <!-- aside -->
+            <aside class="aside col-3">
+                <!-- 成品類別篩選div -->
+                <div class="category-container">
+                    <ul class="list-unstyled">
+                        <p>依成品類別篩選</p>
+
+                        <li class="nav-item dropdown category disabled dropend btn-sm">
+                            <a class="nav-link dropdown-toggle btn-sm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                飾品
+                            </a>
+                            <ul class="dropdown-menu category-menu">
+                                <li><a class="dropdown-item" href="#">耳環</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">項鍊</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">戒指</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown category disabled dropend ">
+                            <a class="nav-link dropdown-toggle btn-sm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                衣裝
+                            </a>
+                            <ul class="dropdown-menu category-menu">
+                                <li><a class="dropdown-item" href="#">T-shirt</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">洋裝</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">大衣。外套</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown category disabled dropend ">
+                            <a class="nav-link dropdown-toggle btn-sm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                生活雜貨
+                            </a>
+                            <ul class="dropdown-menu category-menu">
+                                <li><a class="dropdown-item" href="#">照明。燈具</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">室內香氛。擴香瓶</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">盆栽。花圈。花環</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown category disabled dropend ">
+                            <a class="nav-link dropdown-toggle btn-sm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                藝術作品
+                            </a>
+                            <ul class="dropdown-menu category-menu">
+                                <li><a class="dropdown-item" href="#">插畫</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">相片。寫真</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">其他藝術作品</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown category disabled dropend ">
+                            <a class="nav-link dropdown-toggle btn-sm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                文具 & 辦公用品
+                            </a>
+                            <ul class="dropdown-menu category-menu">
+                                <li><a class="dropdown-item" href="#">原子筆。鋼筆</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">筆記本。便利貼</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">印章。磁鐵</a></li>
+                            </ul>
+                        </li>
+                    </ul>                    
+                </div>
+
+                <!-- 成品類別篩選div -->
+                <div class="category-container">
+                    <ul class="list-unstyled">
+                        <p>依材料類別篩選</p>
+                        <li><a href="#" class="text-decoration-none">珍珠</a></li>
+                        <li><a href="#" class="text-decoration-none">皮革</a></li>
+                        <li><a href="#" class="text-decoration-none">毛線</a></li>
+                        <li><a href="#" class="text-decoration-none">金屬</a></li>
+                        <li><a href="#" class="text-decoration-none">玻璃</a></li>
+                    </ul>                    
+                </div>
+            </aside>
+            <!-- article -->
+            <article class="article col-9">
+                <!-- Carousel-div -->
+                <div class="carousel-container">
+                    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="img-container d-flex">
+                                    <div class="col-6">
+                                        <img src="https://fakeimg.pl/380x380/" class="img-content">
+                                    </div>
+                                    <div class="col-6">
+                                        <div><img src="https://fakeimg.pl/380x180/" class="img-content"></div>
+                                        <div><img src="https://fakeimg.pl/380x180/" class="img-content"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="img-container d-flex">
+                                    <div class="col-6">
+                                        <img src="https://fakeimg.pl/380x380/" class="img-content">
+                                    </div>
+                                    <div class="col-6">
+                                        <div><img src="https://fakeimg.pl/380x180/" class="img-content"></div>
+                                        <div><img src="https://fakeimg.pl/380x180/" class="img-content"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="img-container d-flex">
+                                    <div class="col-6">
+                                        <img src="https://fakeimg.pl/380x380/" class="img-content">
+                                    </div>
+                                    <div class="col-6">
+                                        <div><img src="https://fakeimg.pl/380x180/" class="img-content"></div>
+                                        <div><img src="https://fakeimg.pl/380x180/" class="img-content"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- popular-div -->
+                <h3>人氣商品</h3>
+                <div class="popular-product-container d-flex">
+                    
+                    <div class="popular-product">
+                        <div class="popular-img"><img src="https://picsum.photos/150" alt="1"></div>
+                        <p class="popular-description">女裝fair-trade純棉長袖</p>
+                    </div>
+                    <div class="popular-product">
+                        <div class="popular-img"><img src="https://picsum.photos/150" alt="2"></div>
+                        <p class="popular-description">躲貓貓方袖蜜桃棉T黑色</p>
+                    </div>
+                    <div class="popular-product">
+                        <div class="popular-img"><img src="https://picsum.photos/150" alt="3"></div>
+                        <p class="popular-description">特賣☆NOLITA原創寬鬆蓬T-shirt</p>
+                    </div>
+                    <div class="popular-product">
+                        <div class="popular-img"><img src="https://picsum.photos/150" alt="4"></div>
+                        <p class="popular-description">市原T卹女士</p>
+                    </div>
+                    <div class="popular-product">
+                        <div class="popular-img"><img src="https://picsum.photos/150" alt="5"></div>
+                        <p class="popular-description">柔滑棉花製成熟風白色T恤</p>
+                    </div>
+                </div>
+            </article>            
+        </div>
+    </main>
+
+
+    <!-- script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
