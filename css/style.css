@@ -1,0 +1,105 @@
+    /* 骨架css */
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+    .main-content {
+        max-width: 1200px;
+        height: 3000px;
+        /* padding-top導覽列的距離 */
+        padding-top: 126px;
+    }
+
+    .aside {
+        /* background-color: bisque; */
+        border-right: 1px solid rgb(167, 167, 167);
+    }
+
+    .article {
+        /* background-color: aquamarine; */
+    }
+
+    /* 微調版面css */
+    h3 {
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+
+    /* navbar */
+    .nav-content {
+        max-width: 65%;
+    }
+
+    /* 分類器部分(aside內容) */
+    .category-container {
+        /* background-color: rgb(183, 138, 224); */
+    }
+
+    .catalog {
+        background-color: rgb(171, 214, 231);
+    }
+
+    .catalog a {
+        color: #000;
+    }
+
+    .category-menu {
+        /* background-color: bisque; */
+        padding-left: 10px;
+        margin-bottom: 0;
+    }
+
+    .category-menu a {
+        color: #505050;
+    }
+
+    .catalog-active {
+        background-color: rgb(255, 184, 97);
+    }
+
+    /* 輪播器部分css */
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 5%;
+    }
+
+    .carousel-img {
+        border-radius: 3px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .carousel-img {
+            margin: 10px;
+        }
+    }
+
+    .carousel-indicators {
+        position: absolute;
+        bottom: -50px;
+    }
+
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon,
+    .carousel-indicators>button {
+        background-color: #aaaaaa !important;
+    }
+
+    /* 熱門商品、人氣店家、流行話題     使用bootstrap "card"套件*/
+    /* 額外新增card-img-div製作img hover效果 */
+    .card {
+        margin-bottom: 10px;
+    }
+
+    .card-img-div {
+        max-width: 100%;
+        border-radius: 0.375rem;
+        overflow: hidden;
+    }
+
+    .card img:hover {
+        transform: scale(1.2);
+    }
+
+    .card img {
+        transition: 0.3s ease-out;
+    }
