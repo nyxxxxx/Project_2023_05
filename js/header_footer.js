@@ -5,7 +5,7 @@ $('header').append(`        <!-- navbar -->
         <div class="searchbar col-12 d-flex justify-content-center">
             <input type="text" placeholder="搜尋想要的創作">
             <button type="submit">Search</button>
-            
+
         </div>
 
         <div class="nav-content col-xl-6 col-lg-9 col-md-11 mx-auto">
@@ -45,7 +45,7 @@ $('header').append(`        <!-- navbar -->
                 <li class="drop-item mx-auto">
                     <a href="#">關於我們</a>
                     <ul class="d-menu list-unstyled">
-                        <li><a href="#">網站理念</a></li>
+                        <li><a href="about.html">網站理念</a></li>
                     </ul>
                 </li>
             </ul>
