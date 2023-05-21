@@ -1,61 +1,165 @@
     /* 骨架css */
-    *, ::after, ::before {
+    *,
+    ::after,
+    ::before {
         box-sizing: border-box;
     }
+
     .main-content {
-        max-width: 1200px;
-        height: 3000px;
         /* padding-top導覽列的距離 */
-        padding-top: 126px;
+        margin-top: 75px;
+        /* background-color: rgb(186, 216, 228); */
     }
 
     .aside {
         /* background-color: bisque; */
-        border-right: 1px solid rgb(167, 167, 167);
     }
 
     .article {
         /* background-color: aquamarine; */
     }
-
+    a {
+        text-decoration: none;
+        color: #3d3d3d;
+    }
     /* 微調版面css */
     h3 {
-        margin-top: 50px;
+        margin-top: 10px;
         margin-bottom: 10px;
     }
 
     /* navbar */
-    .nav-content {
-        max-width: 65%;
+
+    .navbar-div {
+        background-color: rgb(250, 247, 242);
+
     }
 
-    /* 分類器部分(aside內容) */
-    .category-container {
+    .searchbar {
+        margin-bottom: 10px;
+    }
+
+    .button {
+        border-radius: 2px;
+    }
+    .nav-content * {
+        color:rgb(223, 171, 123);
+    }
+    .web-title {
+        padding-right: 100px;
+        color: rgb(243, 156, 84);
+        font-weight: bolder;
+    }
+
+    .drop-item {
+        position: relative;
+        padding: 10px;
+    }
+
+    .drop-item a::after {
+        content: '';
+        width: 0%;
+        height: 3px;
+        display: block;
+        margin: 2px auto;
+        background-color: rgb(223, 171, 123);
+        transition: width 0.3s;
+    }
+    .drop-item:hover .d-menu {
+        display: block;
+        z-index: 9999;
+    }
+
+    .drop-item:hover>a::after {
+        width: 100%;
+    }
+
+    .d-menu {
+        display: none;
+        box-shadow: 11px 11px 14px -10px rgba(110,110,110,0.3);
+        background-color: rgb(252, 250, 246);
+        border-bottom: 1px solid rgba(192, 183, 153 ,0.5);
+        position: absolute;
+        width: 150%;
+        /* 將下拉式選單放置母選單底部 */
+        top: 100%;
+    }
+    .d-menu li {
+        padding: 5px 0;
+        padding-left: 5px;
+        border-top: 1px solid rgba(192, 183, 153 ,0.5);
+        border-right: 1px solid rgba(192, 183, 153 ,0.5);
+        border-left: 1px solid rgba(192, 183, 153 ,0.5);
+        transition: 0.5s;
+    }
+
+    .d-menu li:hover {
+        background-color: rgb(243, 156, 84);
+    }
+
+    .d-menu li:hover a{
+        color:rgb(255, 255, 255);
+    }
+
+    /* 成品類別篩選div部分(aside內容) */
+
+    .category-container  > *li {
+        padding-left: 3px;
+        padding-top: 5px;
+        padding-bottom: 5px;
         /* background-color: rgb(183, 138, 224); */
     }
-
-    .catalog {
-        background-color: rgb(171, 214, 231);
+    .category-container h5 {
+        text-align: center;
+        color: #FFF;
+        background-color:rgb(184, 140, 100);
+        border-radius: 5px;
+        margin-bottom: 10px;
     }
-
+    .catalog {
+        background-color: rgb(250, 247, 242);
+        padding-left: 3px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
     .catalog a {
-        color: #000;
+        color: rgb(223, 171, 123);
     }
 
     .category-menu {
-        /* background-color: bisque; */
+        background-color: rgb(252, 250, 247);
         padding-left: 10px;
         margin-bottom: 0;
     }
 
     .category-menu a {
-        color: #505050;
+        color: rgb(184, 140, 100);
+    }
+
+    .category-menu li {
+        padding-left: 3px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 
     .catalog-active {
-        background-color: rgb(255, 184, 97);
+        background-color: rgb(243, 156, 84);
     }
-
+    .catalog-active a{
+        color: #FFF;
+    }
+    /* 材料類別篩選div部分(aside內容) */
+    .category-container li {
+        padding-left: 3px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .material-ul {
+        background-color: rgb(250, 247, 242);
+    }
+    .material-ul li a {
+        color: rgb(223, 171, 123);
+    }
     /* 輪播器部分css */
 
     .carousel-control-prev,
@@ -81,7 +185,7 @@
     .carousel-control-next-icon,
     .carousel-control-prev-icon,
     .carousel-indicators>button {
-        background-color: #aaaaaa !important;
+        background-color: rgb(228, 219, 206) !important;
     }
 
     /* 熱門商品、人氣店家、流行話題     使用bootstrap "card"套件*/
@@ -102,4 +206,66 @@
 
     .card img {
         transition: 0.3s ease-out;
+    }
+
+    /* footer */
+    footer {
+        margin-top: 50px;
+        width: 100%;
+        background-color: rgb(250, 247, 242);
+    }
+
+    /* .footer-aside */
+    .footer-aside {
+        padding: 20px 0px;
+        font-size: 18px;
+    }
+
+    .footer-aside h4 {
+        color: rgb(223, 171, 123);
+        margin-bottom: 30px;
+    }
+
+    .footer-aside ul {
+        max-width: 75%;
+        border-right: 1px solid rgba(223, 171, 123 , 0.5);
+    }
+
+    .footer-aside li {
+        transition: all 0.3s;
+        border-left: rgb(223, 171, 123) solid 0px;
+        margin-bottom: 5px;
+    }
+
+    .footer-aside li:hover {
+
+        border-left: rgb(223, 171, 123) solid 6px;
+    }
+
+    /* footer-article */
+
+    .footer-sub {
+        padding: 10px 0;
+        background-color: rgb(255, 163, 88);
+    }
+
+    .footer-sub h6 {
+        color: #FFF;
+        margin: 0;
+    }
+    .footer-list li a{
+        color: rgb(223, 171, 123);
+    }
+    /* to top button */
+    #fixed-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        border-radius: 100%;
+        cursor: pointer;
+        color: #FFF;
+        background-color: rgb(243, 156, 84);
+        padding: 20px 20px;
+        border: none;
     }
