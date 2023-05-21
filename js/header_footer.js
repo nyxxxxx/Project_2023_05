@@ -5,12 +5,16 @@ $('header').append(`        <!-- navbar -->
         <div class="searchbar col-12 d-flex justify-content-center">
             <input type="text" placeholder="搜尋想要的創作">
             <button type="submit">Search</button>
+            
         </div>
 
-        <div class="nav-content col-xl-6 col-lg-8 col-md-10 mx-auto">
+        <div class="nav-content col-xl-6 col-lg-9 col-md-11 mx-auto">
 
             <ul class="d-flex justify-content-center align-items-center list-unstyled">
-                <h3 class="web-title text-center"> 民藝集市</h3>
+                <a href="index.html" class="d-flex">
+                    <img src="./images/Ming-03.png" class="logo img-fluid" alt="logo">
+                    <h3 class="web-title text-center">民藝集市</h3>            
+                </a>
                 <li class="drop-item mx-auto"><a href="#">找創作</a></li>
                 <li class="drop-item mx-auto">
                     <a href="#">優惠專區</a>

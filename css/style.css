@@ -42,6 +42,12 @@
     .button {
         border-radius: 2px;
     }
+
+    .logo {
+        width: 50px;
+        margin-right: 20px;
+    }
+
     .nav-content * {
         color:rgb(223, 171, 123);
     }
@@ -109,7 +115,8 @@
         padding-bottom: 5px;
         /* background-color: rgb(183, 138, 224); */
     }
-    .category-container h5 {
+    .category-container h6 {
+        padding: 10px 0;
         text-align: center;
         color: #FFF;
         background-color:rgb(184, 140, 100);
