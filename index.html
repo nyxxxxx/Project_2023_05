@@ -19,7 +19,7 @@
     <!-- css here -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- js file here -->
-    <script src="./js/header_footer.js" async></script>
+    <!-- <script src="./js/header_footer.js" async></script> -->
 
 </head>
 
@@ -35,7 +35,7 @@
             <aside class="aside col-lg-2 col-md-3 ">
                 <!-- 成品類別篩選div -->
                 <div class="category-container">
-                    <h6>依成品類別篩選</h6>
+                    <h6>成品類別</h6>
 
                     <div class="catalog" style="border-top-left-radius: 5px; border-top-right-radius: 5px;">
                         <a class="text-decoration-none" href="#">飾品</a>
@@ -96,7 +96,7 @@
                 <hr>
                 <!-- 成品類別篩選div -->
                 <div class="category-container">
-                    <h6>依材料類別篩選</h6>
+                    <h6>材料類別</h6>
                     <ul class="material-ul list-unstyled">
                         <li><a href="#" class="text-decoration-none">珍珠</a></li>
                         <li><a href="#" class="text-decoration-none">皮革</a></li>
@@ -175,38 +175,6 @@
                 <!-- 熱門商品 -->
                 <h3 style="margin-top: 50px;">熱門商品</h3>
                 <div class="popular-product-container row d-flex justify-content-around flex-wrap" >
-
-                    <div class="card col-lg-2 col-md-5" style="padding-left: 0; padding-right: 0;">
-                        <div class="card-img-div"><img src="https://picsum.photos/300" class="card-img-top" alt="..."></div>
-                        <div class="card-body">
-                        <h5 class="card-title">A商品info</h5>
-
-                        </div>
-                    </div>
-
-                    <div class="card col-lg-2 col-md-5" style="padding-left: 0; padding-right: 0;">
-                        <div class="card-img-div"><img src="https://picsum.photos/300" class="card-img-top" alt="..."></div>
-                        <div class="card-body">
-                        <h5 class="card-title">B商品info</h5>
-
-                        </div>
-                    </div>
-
-                    <div class="card col-lg-2 col-md-5" style="padding-left: 0; padding-right: 0;">
-                        <div class="card-img-div"><img src="https://picsum.photos/300" class="card-img-top" alt="..."></div>
-                        <div class="card-body">
-                        <h5 class="card-title">C商品info</h5>
-
-                        </div>
-                    </div>
-
-                    <div class="card col-lg-2 col-md-5" style="padding-left: 0; padding-right: 0;">
-                        <div class="card-img-div"><img src="https://picsum.photos/300" class="card-img-top" alt="..."></div>
-                        <div class="card-body">
-                        <h5 class="card-title">D商品info</h5>
-
-                        </div>
-                    </div>
                 </div>
 
                 <!-- 流行話題 from pinkoi-->
@@ -235,9 +203,8 @@
                 <!-- 人氣商店 -->
                 <h3>人氣商店</h3>
                 <div class="popular-shop-container row d-flex justify-content-around flex-wrap" >
-
                     <div class="card col-lg-3 col-md-7" style="padding-left: 0; padding-right: 0;">
-                        <div class="card-img-div"><img src="https://picsum.photos/250/200" class="card-img-top" alt="..."></div>
+                        <div class="card-img-div"><img src="./images/product/product_21.jpg" class="card-img-top" alt="..."></div>
                         <div class="card-body">
                         <h5 class="card-title">A店家info</h5>
 
@@ -245,7 +212,7 @@
                     </div>
 
                     <div class="card col-lg-3 col-md-7" style="padding-left: 0; padding-right: 0;">
-                        <div class="card-img-div"><img src="https://picsum.photos/250/200" class="card-img-top" alt="..."></div>
+                        <div class="card-img-div"><img src="./images/product/product_06.jpg" class="card-img-top" alt="..."></div>
                         <div class="card-body">
                         <h5 class="card-title">B店家info</h5>
 
@@ -253,7 +220,7 @@
                     </div>
 
                     <div class="card col-lg-3 col-md-7" style="padding-left: 0; padding-right: 0;">
-                        <div class="card-img-div"><img src="https://picsum.photos/250/200" class="card-img-top" alt="..."></div>
+                        <div class="card-img-div"><img src="./images/product/product_18.jpg" class="card-img-top" alt="..."></div>
                         <div class="card-body">
                         <h5 class="card-title">C店家info</h5>
 
@@ -293,9 +260,32 @@
             //to top動畫
             $('#fixed-button').click(function() {
                 $('html, body').stop().scrollTop(0);
-            });            
-        });
+            });
+            //熱門商品圖片載入
+            for(var i = 1 ; i <=5; i++){
+                var number = i;
+                if(i<10) number='0'+`${i}`;
+                $('.popular-product-container').append(`
+                <div class="product card col-lg-2 col-md-5" style="padding-left: 0; padding-right: 0;">
+                        <div class="card-img-div">
+                            <img src="./images/product/product_${number}.jpg" class="card-img-top" alt="...">
+                            <img src="./images/heart.png" class="heart" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">商品${number}</h5>
+                        </div>
+                </div>
+                `);
+            }
+            //heart hover動畫
+            $('.heart').mouseenter(function(){
+                $(this).attr('src' , './images/heart-hover.png')
+            });
+            $('.heart').mouseleave(function(){
+                $(this).attr('src' , './images/heart.png')
+            });
 
+        });
 
 
     </script>
@@ -304,7 +294,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-
+    <script src="./js/header_footer.js" async></script>
+    <!-- to-top-button -->
 </body>
 
 </html>

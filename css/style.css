@@ -18,6 +18,10 @@
     .article {
         /* background-color: aquamarine; */
     }
+
+    .article *{
+        color: gray;
+    }
     a {
         text-decoration: none;
         color: #3d3d3d;
@@ -39,6 +43,10 @@
         margin-bottom: 10px;
     }
 
+    .searchbar a {
+        margin: 0 20px;
+        color: rgb(223, 171, 123);
+    }
     .button {
         border-radius: 2px;
     }
@@ -198,20 +206,32 @@
     /* 熱門商品、人氣店家、流行話題     使用bootstrap "card"套件*/
     /* 額外新增card-img-div製作img hover效果 */
     .card {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     .card-img-div {
         max-width: 100%;
-        border-radius: 0.375rem;
+        border-top-right-radius: 0.375rem;
+        border-top-left-radius: 0.375rem;
         overflow: hidden;
+        position: relative;
     }
 
-    .card img:hover {
+    .heart {
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+        /* hover寫在Jquery */
+    }
+    .card-img-top:hover {
         transform: scale(1.2);
     }
-
-    .card img {
+    .card-body {
+        padding: 0;
+        padding-top: 5px;
+        padding-left: 10px;
+    }
+    .card-img-top {
         transition: 0.3s ease-out;
     }
 

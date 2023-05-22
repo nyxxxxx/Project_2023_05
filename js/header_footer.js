@@ -2,20 +2,21 @@
 $('header').append(`        <!-- navbar -->
     <div class="navbar-div row mx-auto flex-column">
 
-        <div class="searchbar col-12 d-flex justify-content-center">
+        <div class="searchbar col-12 d-flex justify-content-center align-items-center">
             <input type="text" placeholder="搜尋想要的創作">
             <button type="submit">Search</button>
-
+            <a href="#">登入</a>
+            <a href="#" class="d-flex align-items-center"><img src="./images/cart-icon.png" alt="">&nbsp;&nbsp;&nbsp;購物車</a>
         </div>
 
-        <div class="nav-content col-xl-6 col-lg-9 col-md-11 mx-auto">
+        <div class="nav-content col-xl-7 col-lg-9 col-md-11 mx-auto">
 
             <ul class="d-flex justify-content-center align-items-center list-unstyled">
                 <a href="index.html" class="d-flex">
                     <img src="./images/Ming-03.png" class="logo img-fluid" alt="logo">
                     <h3 class="web-title text-center">民藝集市</h3>            
                 </a>
-                <li class="drop-item mx-auto"><a href="#">找創作</a></li>
+                <li class="drop-item mx-auto"><a href="AllProduct.html">找創作</a></li>
                 <li class="drop-item mx-auto">
                     <a href="#">優惠專區</a>
                     <ul class="d-menu list-unstyled">
@@ -29,6 +30,7 @@ $('header').append(`        <!-- navbar -->
                     <a href="#">商品誌</a>
                     <ul class="d-menu list-unstyled">
                         <li><a href="#">商品誌</a></li>
+                        <li><a href="#">流行話題</a></li>
                         <li><a href="#">人物專訪</a></li>
                         <li><a href="#">商品理念</a></li>
                     </ul>
@@ -45,7 +47,7 @@ $('header').append(`        <!-- navbar -->
                 <li class="drop-item mx-auto">
                     <a href="#">關於我們</a>
                     <ul class="d-menu list-unstyled">
-                        <li><a href="about.html">網站理念</a></li>
+                        <li><a href="About.html">網站理念</a></li>
                     </ul>
                 </li>
             </ul>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ming Yi | 商品頁面</title>
+
+    <!-- link -->
+        <!-- favicon -->
+    <link rel="shortcut icon" href="./images/Ming-02.ico" type="image/x-icon">
+        <!-- bootstrap5.3.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- css here -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- js file here -->
+    <script src="./js/header_footer.js" async></script>
+
+    <style>
+        .product {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header></header>
+    <!-- main -->
+    <main>
+
+        <!-- main content -->
+        <div class="main-content row col-xl-8 col-md-12 mx-auto">
+            <!-- aside -->
+            <aside class="aside col-lg-2 col-md-3 ">
+                <!-- 成品類別篩選div -->
+                <div class="category-container">
+                    <h6>成品類別</h6>
+
+                    <div class="catalog" style="border-top-left-radius: 5px; border-top-right-radius: 5px;">
+                        <a class="text-decoration-none" href="#">飾品</a>
+                    </div>
+
+                    <ul class="category-menu list-unstyled">
+                        <li><a class="text-decoration-none" href="#">耳環</a></li>
+                        <li><a class="text-decoration-none" href="#">項鍊</a></li>
+                        <li><a class="text-decoration-none" href="#">戒指</a></li>
+                    </ul>
+
+
+                    <div class="catalog">
+                        <a class="text-decoration-none" href="#">衣裝</a>
+                    </div>
+
+                    <ul class="category-menu list-unstyled">
+                        <li><a class="text-decoration-none" href="#">T-shirt</a></li>
+                        <li><a class="text-decoration-none" href="#">洋裝</a></li>
+                        <li><a class="text-decoration-none" href="#">大衣。外套</a></li>
+                    </ul>
+
+
+                    <div class="catalog">
+                        <a class="text-decoration-none" href="#">生活雜貨</a>
+                    </div>
+
+                    <ul class="category-menu list-unstyled">
+                        <li><a class="category-a text-decoration-none" href="#">照明。燈具</a></li>
+                        <li><a class="category-a text-decoration-none" href="#">室內香氛。擴香瓶</a></li>
+                        <li><a class="category-a text-decoration-none" href="#">盆栽。花圈。花環</a></li>
+                    </ul>
+
+
+                    <div class="catalog">
+                        <a class="text-decoration-none" href="#">藝術作品</a>
+                    </div>
+
+                    <ul class="category-menu list-unstyled">
+                        <li><a class="text-decoration-none" href="#">插畫</a></li>
+                        <li><a class="text-decoration-none" href="#">相片。寫真</a></li>
+                        <li><a class="text-decoration-none" href="#">其他藝術作品</a></li>
+                    </ul>
+
+
+                    <div class="catalog" >
+                        <a class="text-decoration-none" href="#" >文具&辦公用品</a>
+                    </div>
+
+                    <ul class="category-menu list-unstyled">
+                        <li><a class="text-decoration-none" href="#">原子筆。鋼筆</a></li>
+                        <li><a class="text-decoration-none" href="#">筆記本。便利貼</a></li>
+                        <li><a class="text-decoration-none" href="#">印章。磁鐵</a></li>
+                    </ul>
+
+                </div>
+                <br>
+                <hr>
+                <!-- 成品類別篩選div -->
+                <div class="category-container">
+                    <h6>材料類別</h6>
+                    <ul class="material-ul list-unstyled">
+                        <li><a href="#" class="text-decoration-none">珍珠</a></li>
+                        <li><a href="#" class="text-decoration-none">皮革</a></li>
+                        <li><a href="#" class="text-decoration-none">毛線</a></li>
+                        <li><a href="#" class="text-decoration-none">金屬</a></li>
+                        <li><a href="#" class="text-decoration-none">玻璃</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <!-- article -->
+            <article class="article col-lg-10 col-md-9">
+                <div class="product-container row d-flex justify-content-around flex-wrap"></div>
+            </article>
+            
+        </div>
+    </main>
+    <!-- footer -->
+    <footer></footer>
+    
+    
+
+
+    <!--js script -->
+    <script>
+        $(document).ready(function () {
+            // 分類器initial
+            $('.category-menu').hide();
+            $('.category-menu:first').show();
+            $('.catalog:first').addClass('catalog-active');
+            // 宣告to top button
+            $('body').append('<button id="fixed-button" class="d-none d-lg-block">Top</button>');
+            $('#fixed-button').hide();
+
+            //分類器切換動畫
+            $('.catalog').click(function () {
+                if (!$(this).hasClass('catalog-active')) {
+                    $('.category-menu').filter(':visible').slideUp('fast').prev().removeClass('catalog-active');
+                    $(this).addClass('catalog-active').next().slideDown('fast');
+                }
+            });
+  
+            //所有商品載入
+            for(var i = 1 ; i <=30; i++){
+                var number = i;
+                if(i<10) number='0'+`${i}`;
+                $('.product-container').append(`
+                <div class="product card col-lg-2 col-md-5" style="padding-left: 0; padding-right: 0;">
+                        <div class="card-img-div">
+                            <img src="./images/product/product_${number}.jpg" class="card-img-top" alt="...">
+                            <img src="./images/heart.png" class="heart" alt="...">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">商品${number}</h5>
+                        </div>
+                </div>
+                `);                
+            }
+            //heart hover動畫 !!重要 必須要等商品元素生成完成後再指派事件
+            $('.heart').mouseenter(function(){
+                $(this).attr('src' , './images/heart-hover.png')
+            });
+            $('.heart').mouseleave(function(){
+                $(this).attr('src' , './images/heart.png')
+            });  
+
+
+            //to top動畫
+            $('#fixed-button').click(function() {
+                $('html, body').stop().scrollTop(0);
+            });            
+        });
+
+
+    </script>
+
+    <!-- resource script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <!-- to-top-button -->
+</body>
+
+</html>
