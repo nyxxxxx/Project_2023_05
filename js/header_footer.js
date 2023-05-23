@@ -4,9 +4,9 @@ $('header').append(`        <!-- navbar -->
 
         <div class="searchbar col-12 d-flex justify-content-center align-items-center">
             <input type="text" placeholder="搜尋想要的創作">
-            <button type="submit">Search</button>
-            <a href="#">登入</a>
-            <a href="#" class="d-flex align-items-center"><img src="./images/cart-icon.png" alt="">&nbsp;&nbsp;&nbsp;購物車</a>
+            <button  type="submit">Search</button>
+            <a href="#" class="log-in">登入</a>
+            <a href="#" class="d-flex align-items-center"><img src="./images/cart-icon.png" alt=""></a>
         </div>
 
         <div class="nav-content col-xl-7 col-lg-9 col-md-11 mx-auto">
