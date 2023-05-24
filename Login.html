@@ -20,12 +20,59 @@
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- js file here -->
-    <!-- <script src="./js/header_footer.js" async></script> -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    <script src="https://unpkg.com/vue@next"></script>
     <style>
-        .text-content {
-            padding-left: 8px;
+        body {
+            background-color: rgb(226, 226, 226);
+        }
+        .f-container {
+            background-color: rgb(255, 255, 255);
+            padding: 20px 0;
+            z-index: 9999;
+            color: rgb(243, 156, 84);
+            box-shadow: 7px 8px 18px 3px rgba(186,186,186,0.59);
+            border-radius: 5px;
+            max-width: 400px;
+            max-height: 600px;
+            margin-top: 100px;
+        }
+        .f-group {
+            margin: 30px 0;
+        }
+        a {
+            color:rgb(243, 156, 84);
+            font-weight: bolder;
+        }
+        input {
+            border: 0;
+            border-bottom: 2px solid rgb(243, 156, 84);
+        }
+
+        input:focus {
+            outline: 0;
+
+        }
+
+        label {
+            font-weight: bolder;
+        }
+
+        .s-button {
+            border: rgb(243, 156, 84) 2px solid;
+            border-radius: 3px;
+            background-color: rgb(243, 156, 84);
+            padding:3px 10px;
+            color: #FFF;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .s-button:hover {
+            border: rgb(236, 122, 28) 2px solid;
+            background-color: rgb(236, 122, 28);
+        }
+        ::placeholder {
+            color:rgb(102, 102, 102);
         }
     </style>
 </head>
@@ -34,55 +81,83 @@
     <!-- header -->
     <header></header>
     <main>
-        <div class="f-container">
-            <form action="">
-                <h2> Account Login</h2>
-                <div class="f-form-group">
-                    <label for="username">Username</label><br><input type="text" name="username" value="請輸入使用者名稱">
-                </div>
-                <div class="f-form-group">
-                    <label for="password">Password</label><br><input type="text" name="password" value="請輸入密碼">
-                </div>
-                <div class="f-from-group">
-                    <input type="checkbox" name="" id="remember"><label for="remerber">Remember Me</label>
-                    <a href="">忘記密碼?</a>
-                </div>
-                <div class="m-form_group">
-                    <a class="m-form_btn">Log In</a>
-                  </div>
-            </form>
+        <div class="d-flex">
+            <div class="col-xl-5 col-lg-6 col-md-6"><img class="img-fluid" src="./images/banner/login2.jpg" alt="" srcset=""></div>
+            <div class="f-container col-xl-5 col-lg-6 col-md-6 mx-auto d-flex justify-content-center align-items-center" id="form-container">
+                <form id="signin">
+                    <h2> Sign In</h2>
+                    <div class="f-group">
+                        <label for="username">Username</label><br><input type="text" id="username"
+                            v-model="username">
+                    </div>
+                    <div class="f-group">
+                        <label for="password">Password</label><br><input type="text" id="password" 
+                            v-model="password">
+                    </div>
+                    <div class="f-group">
+                        <input type="checkbox" id="remember"><label for="remerber">記住我</label>
+                        <a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;忘記密碼?</a>
+                        
+                    </div>
+                    <div class="f-group d-flex justify-content-around">
+                        <button type="button" class="s-button">Log in</button>
+                        <button type="button" class="s-button" id="sign-up-btn">Sign up</button>
+                    </div>
+                </form>
+                <form id="signup">
+                    <h2> Sign Up</h2>
+                    <div class="f-group">
+                        <label for="username">Username</label><br><input type="text" id="username"
+                            v-model="username">
+                    </div>
+                    <div class="f-group">
+                        <label for="password">Password</label><br><input type="text" id="password" 
+                            v-model="password">
+                    </div>
+                    <div class="f-group">
+                        <label for="password">Comfirm Password</label><br><input type="text" id="password" 
+                            v-model="password">
+                    </div>
+                    <div class="f-group">
+                        <label for="email">E-mail</label><br><input type="text" id="email" 
+                            v-model="password">
+                    </div>
+                    <div class="f-group d-flex justify-content-around">
+                        <button type="button" class="s-button" >Register</button>
+                        <button type="button" class="s-button" id="sign-in-btn">Sign in</button>
+                    </div>
+                </form>
+            </div>            
         </div>
 
-        <div class="f-container">
-            <form action="">
-                <h2> Register Account</h2>
-                <div class="f-form-group">
-                    <label for="username">Username</label><br><input type="text" name="username" >
-                </div>
-                <div class="f-form-group">
-                    <label for="password">Password</label><br><input type="text" name="password" >
-                </div>
-                <div class="f-form-group">
-                    <label for="confirm">Confirm Password</label><br><input type="text" name="confirm" >
-                </div>
-                <div class="f-form-group">
-                    <label for="email">E-mail</label><br><input type="text" name="email" >
-                </div>
-                <div class="f-from-group">
-                    <input type="checkbox" name="" id="remember"><label for="remerber">Remember Me</label>
-                    <a href="">忘記密碼?</a>
-                </div>
-                <div class="m-form_group">
-                    <a class="m-form_btn">Log In</a>
-                  </div>
-            </form>
-        </div>
     </main>
-    <footer></footer>
+
 
     <script>
-        AOS.init();
+        $(document).ready(function(){
+            $('form').eq(1).hide();
+            $('#sign-up-btn').click(function(){
+                $('form').eq(0).fadeOut('slow').delay(300);
+                $('form').stop(true,true).eq(1).fadeIn('slow');
+            });
+            $('#sign-in-btn').click(function(){
+                $('form').eq(1).fadeOut('slow').delay(300);
+                $('form').stop(true,true).eq(0).fadeIn('slow');
+            });
+        });
+
+
+        // Vue拿資料
+        const vm = Vue.createApp({
+            data() {
+                return {
+                    username: '',
+                    password: '',
+                }
+            }
+        }).mount('#signin');
     </script>
+
     <script src="./js/header_footer.js" async></script>
 </body>
 

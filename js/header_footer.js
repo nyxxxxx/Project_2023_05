@@ -5,7 +5,7 @@ $('header').append(`        <!-- navbar -->
         <div class="searchbar col-12 d-flex justify-content-center align-items-center">
             <input type="text" placeholder="搜尋想要的創作">
             <button  type="submit">Search</button>
-            <a href="#" class="log-in">登入</a>
+            <a href="Login.html" class="log-in">登入</a>
             <a href="#" class="d-flex align-items-center"><img src="./images/cart-icon.png" alt=""></a>
         </div>
 
