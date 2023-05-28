@@ -29,7 +29,7 @@ $('header').append(`        <!-- navbar -->
                 <li class="drop-item mx-auto">
                     <a href="#">商品誌</a>
                     <ul class="d-menu list-unstyled">
-                        <li><a href="#">商品誌</a></li>
+                        <li><a href="Topics.html">商品誌</a></li>
                         <li><a href="#">流行話題</a></li>
                         <li><a href="#">人物專訪</a></li>
                         <li><a href="#">商品理念</a></li>

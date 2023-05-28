@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Parallax Scrolling Example</title>
+    <style>
+        .parallax-section {
+            height: 100vh;
+            background-image: url('./images/banner/farshid-moghadam-FktPzA_VXDM-unsplash.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+</head>
+
+<body>
+    <div class="parallax-section" id="section1">
+        <div>Section 1</div>
+    </div>
+    <div class="parallax-section" id="section2">
+        <div>Section 2</div>
+    </div>
+    <div class="parallax-section" id="section3">
+        <div>Section 3</div>
+    </div>
+
+
+    <script>
+        // 初始化 ScrollMagic 控制器
+        var controller = new ScrollMagic.Controller();
+
+        // 創建場景 - Section 1
+        new ScrollMagic.Scene({
+            triggerElement: "#section1",
+            triggerHook: 0,
+            duration: "100%"
+        })
+            .setTween("#section1", { y: "-50%" })
+            .addTo(controller);
+
+        // 創建場景 - Section 2
+        new ScrollMagic.Scene({
+            triggerElement: "#section2",
+            triggerHook: 0,
+            duration: "100%"
+        })
+            .setTween("#section2", { y: "-50%" })
+            .addTo(controller);
+
+        // 創建場景 - Section 3
+        new ScrollMagic.Scene({
+            triggerElement: "#section3",
+            triggerHook: 0,
+            duration: "100%"
+        })
+            .setTween("#section3", { y: "-50%" })
+            .addTo(controller);
+    </script>
+</body>
+
+</html>
