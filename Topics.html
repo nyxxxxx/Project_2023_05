@@ -8,7 +8,6 @@
     <title>Ming Yi | 商品誌</title>
     <!-- source from Pinkoi https://blog.pinkoi.com/tw/lifestyle/2301-aesthetic-cultivation/ -->
 
-
     <!-- link -->
     <!-- favicon -->
     <link rel="shortcut icon" href="./images/Ming-02.ico" type="image/x-icon">
@@ -49,13 +48,16 @@
         .lesson-log li {
             padding: 5px 0;
         }
+
         aside {
             color: gray;
         }
+
         aside p {
             font-size: 14px;
         }
-        aside h2::after{
+
+        aside h2::after {
             display: block;
             content: '';
             width: 97%;
@@ -81,20 +83,15 @@
                             5 堂手作體驗課程，在這個冬去春來的時刻，一起來嘗試以前從來沒有嘗試過的事物吧！</p>
                         <ol class="lesson-log">
                             <p>課堂目錄</p>
-                            <li><a
-                                    href="https://blog.pinkoi.com/tw/lifestyle/2301-aesthetic-cultivation/#%E6%84%9B%E7%9A%84%E6%89%8B%E6%8B%89%E5%9D%AF%E5%99%A8%E7%9A%BF">愛的手拉坯器皿</a>
+                            <li><a href="#" class="lesson-link" id="lesson1">愛的手拉坯器皿</a>
                             </li>
-                            <li><a
-                                    href="https://blog.pinkoi.com/tw/lifestyle/2301-aesthetic-cultivation/#%E5%9C%9F%E5%A3%A4%E7%9F%B3%E9%A0%AD%E7%95%AB%E7%95%AB%E8%AA%B2">土壤石頭畫畫課</a>
+                            <li><a href="#" class="lesson-link" id="lesson2">土壤石頭畫畫課</a>
                             </li>
-                            <li><a
-                                    href="https://blog.pinkoi.com/tw/lifestyle/2301-aesthetic-cultivation/#%E5%9C%9F%E5%A3%A4%E7%9F%B3%E9%A0%AD%E7%95%AB%E7%95%AB%E8%AA%B2">茶染繪書衣</a>
+                            <li><a href="#" class="lesson-link" id="lesson3">茶染繪書衣</a>
                             </li>
-                            <li><a
-                                    href="https://blog.pinkoi.com/tw/lifestyle/2301-aesthetic-cultivation/#%E5%9C%9F%E5%A3%A4%E7%9F%B3%E9%A0%AD%E7%95%AB%E7%95%AB%E8%AA%B2">手捏陶體驗工作坊</a>
+                            <li><a href="#" class="lesson-link" id="lesson4">手捏陶體驗工作坊</a>
                             </li>
-                            <li><a
-                                    href="https://blog.pinkoi.com/tw/lifestyle/2301-aesthetic-cultivation/#%E5%AE%A2%E8%A3%BD%E5%8C%96%E9%A6%99%E6%B0%B4">客製化香水調香課程</a>
+                            <li><a href="#" class="lesson-link" id="lesson5">客製化香水調香課程</a>
                             </li>
                         </ol>
 
@@ -182,15 +179,15 @@
                             <div class="col-5">
                                 <img src="./images/topics/aside2.png" alt="" class="img-fluid">
                                 <p>【2023 畢業花束推薦】依「對象」和「預算」2 種技巧挑選，表達祝福不失禮！</p>
-                            </div>             
+                            </div>
                             <div class="col-5">
                                 <img src="./images/topics/aside3.png" alt="" class="img-fluid">
                                 <p>春聯該怎麼貼？200 個 2023 兔年春聯句子大集合</p>
-                            </div>  
+                            </div>
                             <div class="col-5">
                                 <img src="./images/topics/aside4.png" alt="" class="img-fluid">
                                 <p>焙茶是什麼？一篇搞懂焙茶功效、味道、哪裡買！</p>
-                            </div>                  
+                            </div>
                         </div>
 
                     </aside>
@@ -206,10 +203,23 @@
             $('#fixed-button').hide();
             //to top動畫
             $('#fixed-button').click(function () {
-                $('html, body').stop().scrollTop(0);
+                $('html, body').stop().animate({
+                        scrollTop: 0
+                    }, 100);
             });
 
+            $('.lesson-link').each(function (index) {
+                $('.lesson-link').eq(index).click(function () {
+                    var scrollTarget = $('.lesson-container').eq(index);
+                    var targetOffset = scrollTarget.offset().top;
+                    $('html, body').stop().animate({
+                        scrollTop: targetOffset
+                    }, 100);
+                    console.log(index);
+                });
+            });
         });
+
 
     </script>
     <script>

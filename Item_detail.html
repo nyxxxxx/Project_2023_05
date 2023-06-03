@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ming Yi | 商品詳細</title>
+    <!-- *資料來源 https://minne.com/items/36598743 -->
+
+    <!-- link -->
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/Ming-02.ico" type="image/x-icon">
+    <!-- bootstrap5.3.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <!-- css here -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- js file here -->
+    <script src="./js/header_footer.js" async></script>
+
+    <style>
+        /* aside css */
+        aside {
+            color: gray;
+        }
+
+        #buy-btn:hover {
+            background-color: rgb(241, 167, 107);
+        }
+
+        #buy-btn {
+            padding: 5px 10px;
+            border: none;
+            background-color: rgb(243, 156, 84);
+            color: white;
+        }
+
+        /* article css*/
+        /* album css */
+        .img-div img{
+            border-radius: 3px;
+        }
+        .img-div {
+            width: 15%;
+        }
+        .select-color {
+            border:  2px solid orange;
+        }
+        /* button */
+        #btnPrev {
+            width: 30px;
+            height: 30px;
+            background-image: url("images/icon/prev.png");
+            background-size: contain;
+
+        }
+
+        #btnNext {
+            width: 30px;
+            height: 30px;
+            background-image: url("images/icon/next.png");
+            background-size: contain;
+        }
+
+        .hidden-element {
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        /* tab css */
+        #tabs li {
+            /* border-bottom: none; */
+            margin-right: 15px;
+        }
+
+        #tabs li p {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-bottom: 0;
+            font-size: 1.3rem;
+        }
+
+        #tabs li p::after {
+            content: '';
+            width: 0%;
+            height: 3px;
+            display: block;
+            background-color: rgb(223, 171, 123);
+            transition: 0.5s;
+        }
+
+        #tabs {
+            margin-top: 10px;
+            margin-left: 0;
+
+        }
+
+        .tab {
+            display: none;
+        }
+
+        #tabs li.active p::after {
+            width: 100%;
+        }
+
+        .tab-content {
+            /* border-top: 1px solid gray; */
+            padding-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header></header>
+    <!-- main -->
+    <main>
+
+        <!-- main content -->
+        <div class="main-content row col-xl-8 col-md-12 mx-auto">
+            <!-- article -->
+            <article class="article col-lg-7 col-md-9">
+                <div class="container">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-10 mx-auto">
+                                <img class="w-100" src="./images/product/item01.jpeg" alt="" id="album-img">
+                            </div>
+                        </div>
+                        <div class="container-fluid mt-3">
+                            <div class="row align-items-center mx-auto">
+                                <div id="btnPrev"></div>
+                                <div class="col-10 d-flex justify-content-between div-select"></div>
+                                <div id="btnNext"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <ul id="tabs" class="d-flex">
+                            <li class="list-unstyled">
+                                <p>詳細介紹</p>
+                            </li>
+                            <li class="list-unstyled">
+                                <p>規格 </p>
+                            </li>
+                        </ul>
+                        <hr>
+                        <div class="container tab-content">
+                            <div class="tab">
+                                <p>這款深藍色刺繡手工包包以其精湛的手工工藝和獨特的設計著稱。它採用高品質布料製成，質感柔軟，觸感舒適。每個包包都經過細心的手工刺繡，呈現出精美的花卉、動物等圖案，使其成為一件獨一無二的藝術品。<br><br>
+                                    這個包包的尺寸適中，長度為30厘米，寬度為20厘米，高度為10厘米，提供足夠的空間來容納您的必需品，如手機、錢包、化妝品等。它擁有主要的收納間隔，方便整理和存放物品，同時還配有小型拉鍊口袋和側邊或後面口袋，提供額外的收納空間，讓您可以輕鬆有序地組織您的物品。
+                                    這款包包的設計簡約而時尚，深藍色的外觀散發出一種優雅和高貴的氛圍。無論是日常使用還是特殊場合，它都能為您的造型增添亮點。您可以使用手提式手柄輕鬆攜帶它，或者使用可調節和可拆卸的肩帶將其斜挎或背在肩上，根據需要進行自由變換。<br><br>
+                                    這款深藍色刺繡手工包包是品味和時尚的完美結合，適合各種場合和搭配。不僅可以作為日常手提包或購物包使用，還能成為派對或特殊場合的時尚配飾，為您的整體造型增添魅力和個性。
+                                    請注意，由於每個包包都是手工製作的，圖案和細節可能會略有不同，使每個包包都獨一無二。請在購買前仔細查看產品資訊，以確保您對該款深藍色刺繡手工包包有充分的了解。
+                                </p>
+                            </div>
+                            <div class="tab">
+                                <ol>
+                                    <li>尺寸
+                                        <ul>
+                                            <li>長度: 25cm</li>
+                                            <li>寬度: 15cm</li>
+                                            <li>高度: 10cm</li>
+                                        </ul>
+                                    </li>
+                                    <li>材質
+                                        <ul>
+                                            <li>外部材料: 高品質織物</li>
+                                            <li>刺繡: 精緻刺繡工藝</li>
+                                        </ul>
+                                    </li>
+                                    <li>設計特點
+                                        <ul>
+                                            <li>深藍色設計，經典且時尚</li>
+                                            <li>華麗的花紋和細節刺繡</li>
+                                            <li>簡約實用的設計</li>
+                                            <li>拉鍊或磁扣開合方式</li>
+                                        </ul>
+                                    </li>
+                                    <li>內部結構
+                                        <ul>
+                                            <li>主要收納間隔，可放置手機、錢包、化妝品等物品</li>
+                                            <li>小型拉鍊口袋，方便存放小物件</li>
+                                            <li>側邊或後面口袋，增加收納空間</li>
+                                        </ul>
+                                    </li>
+                                    <li>用途
+                                        <ul>
+                                            <li>日常手提包</li>
+                                            <li>購物包</li>
+                                            <li>派對或特殊場合的時尚配飾</li>
+                                        </ul>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- aside -->
+            <aside class="col-lg-5">
+                <div>
+                    <h3>深藍色刺繡手工裁縫包</h3>
+                    <h5>價錢: 1300 剩餘數量: 2</h5>
+                    <button id="buy-btn" type="button" class="rounded-2 w-100">我要購買</button>
+                    <p>*在此商店購買金額達1,000即可免運費*</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer></footer>
+
+
+
+
+    <!--js script -->
+    <script>
+        var select = 0;//圖片播放器變數
+
+        $(document).ready(function () {
+            // 宣告to top button
+            $('body').append('<button id="fixed-button" class="d-none d-lg-block">Top</button>');
+            $('#fixed-button').hide();
+
+            //詳細規格 &介紹切換JQ
+            $('.tab:first').show();
+            $('#tabs li:first').addClass('active');
+            $('#tabs li').click(function () {
+                var index = $('#tabs li').index($(this));
+                $('.active').removeClass('active');
+                $('#tabs li').eq(index).addClass('active');
+                $('.tab').hide();
+                $('.tab').eq(index).show();
+            });
+
+            //heart hover動畫 !!重要 必須要等商品元素生成完成後再指派事件
+            $('.heart').mouseenter(function () {
+                $(this).attr('src', './images/heart-hover.png')
+            });
+            $('.heart').mouseleave(function () {
+                $(this).attr('src', './images/heart.png')
+            });
+
+            //to top動畫
+            $('#fixed-button').click(function () {
+                $('html, body').stop().scrollTop(0);
+            });
+
+            //Album 載入圖片
+            for (var i = 1; i <= 5; i++) {
+                $('.div-select').append(
+                    `<div class="img-div"><img src="./images/product/item0${i}.jpeg" alt="" class="w-100" id="img-${i}"></div>`
+                );
+            }
+            $(".img-div").children().eq(select).addClass('select-color');
+            iconShow();
+
+        });
+
+        function iconShow() {
+            if (select < 1) {
+                $("#btnPrev").addClass('hidden-element');
+            } else if (select > 3) {
+                $("#btnNext").addClass('hidden-element');
+            } else {
+                $("#btnPrev").removeClass('hidden-element');
+                $("#btnNext").removeClass('hidden-element');
+            }
+        }
+        function fnPrev() {
+            if (select != 0) {
+                $(".select-color").removeClass('select-color');
+                select--;
+                $(".img-div").children().eq(select).addClass('select-color');
+
+                $('#album-img').hide().attr('src', `./images/product/item0${select + 1}.jpeg`).fadeIn(300);
+                iconShow();
+                console.log('select: ' + select);
+            }
+        }
+
+        function fnNext() {
+            $(".select-color").removeClass('select-color');
+            select++;
+            $(".img-div").children().eq(select).addClass('select-color');
+            $('#album-img').hide().attr('src', `./images/product/item0${select + 1}.jpeg`).fadeIn(200);
+            iconShow();
+            console.log('select: ' + select);
+        }
+
+        // 按下往左鈕執行fnPrev函式
+        $("#btnPrev").on("click", fnPrev);
+        // 按下往右鈕執行fnNext函式
+        $("#btnNext").on("click", fnNext);
+    </script>
+
+    <!-- resource script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <!-- to-top-button -->
+</body>
+
+</html>
