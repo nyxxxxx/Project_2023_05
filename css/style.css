@@ -191,33 +191,6 @@
     .material-ul li a {
         color: rgb(223, 171, 123);
     }
-    /* 輪播器部分css */
-
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 5%;
-    }
-
-    .carousel-img {
-        border-radius: 3px;
-    }
-
-    @media screen and (max-width: 1024px) {
-        .carousel-img {
-            margin: 10px;
-        }
-    }
-
-    .carousel-indicators {
-        position: absolute;
-        bottom: -50px;
-    }
-
-    .carousel-control-next-icon,
-    .carousel-control-prev-icon,
-    .carousel-indicators>button {
-        background-color: rgb(228, 219, 206) !important;
-    }
 
     /* 熱門商品、人氣店家、流行話題     使用bootstrap "card"套件*/
     /* 額外新增card-img-div製作img hover效果 */
