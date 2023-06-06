@@ -73,6 +73,7 @@
     <main>
         <div class="container">
             <div class="row d-flex">
+                <!-- article -->
                 <div class="col-md-10 col-lg-8  col-xl-7 mx-auto">
                     <article class="article">
                         <h3>5 堂打造品味的手作體驗課程推薦，開啟你的美感練習計畫</h3>
@@ -83,16 +84,7 @@
                             5 堂手作體驗課程，在這個冬去春來的時刻，一起來嘗試以前從來沒有嘗試過的事物吧！</p>
                         <ol class="lesson-log">
                             <p>課堂目錄</p>
-                            <li><a href="#" class="lesson-link" id="lesson1">愛的手拉坯器皿</a>
-                            </li>
-                            <li><a href="#" class="lesson-link" id="lesson2">土壤石頭畫畫課</a>
-                            </li>
-                            <li><a href="#" class="lesson-link" id="lesson3">茶染繪書衣</a>
-                            </li>
-                            <li><a href="#" class="lesson-link" id="lesson4">手捏陶體驗工作坊</a>
-                            </li>
-                            <li><a href="#" class="lesson-link" id="lesson5">客製化香水調香課程</a>
-                            </li>
+                            <!-- JS載入lesson-link內容 -->
                         </ol>
 
                         <div class="lesson-container">
@@ -168,6 +160,7 @@
                         </div>
                     </article>
                 </div>
+                <!-- aside -->
                 <div class="col-lg-4 d-none d-lg-block">
                     <aside class="sticky-top">
                         <h2>介紹文章</h2>
@@ -198,9 +191,18 @@
     <footer></footer>
     <script>
         $(document).ready(function () {
+            var lesson_link_data = new Array('愛的手拉坯器皿' , '土壤石頭畫畫課' , '茶染繪書衣' , '手捏陶體驗工作坊' , '客製化香水調香課程' );
+            
             // 宣告to top button
             $('body').append('<button id="fixed-button" class="d-none d-lg-block">Top</button>');
-            $('#fixed-button').hide();
+
+            //lesson link載入
+            for(var item in lesson_link_data) {
+                $('.lesson-log p').append(
+                `<li><a href="#" class="lesson-link" id="lesson${item}"> ${lesson_link_data[item]} </a></li>`    
+                );
+            }
+
             //to top動畫
             $('#fixed-button').click(function () {
                 $('html, body').stop().animate({
@@ -208,6 +210,7 @@
                     }, 100);
             });
 
+            // 捲動動畫
             $('.lesson-link').each(function (index) {
                 $('.lesson-link').eq(index).click(function () {
                     var scrollTarget = $('.lesson-container').eq(index);

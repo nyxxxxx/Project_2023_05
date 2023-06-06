@@ -8,7 +8,6 @@
     .main-content {
         /* padding-top導覽列的距離 */
         margin-top: 75px;
-        /* background-color: rgb(186, 216, 228); */
     }
 
     .article *{
@@ -131,7 +130,7 @@
         color:rgb(255, 255, 255);
     }
 
-    /* 成品類別篩選div部分(aside內容) */
+    /* 成品類別篩選div部分(index&allproduct aside內容) */
 
     .category-container  > *li {
         padding-left: 3px;
@@ -153,8 +152,13 @@
         padding-top: 5px;
         padding-bottom: 5px;
     }
-    .catalog a {
+    .catalog p {
         color: rgb(223, 171, 123);
+        margin-bottom: 0;
+    }
+
+    .catalog p:hover {
+        cursor: pointer;
     }
 
     .category-menu {
@@ -176,10 +180,10 @@
     .catalog-active {
         background-color: rgb(243, 156, 84);
     }
-    .catalog-active a{
+    .catalog-active p{
         color: #FFF;
     }
-    /* 材料類別篩選div部分(aside內容) */
+    /* 材料類別篩選div部分(index&allproduct aside內容) */
     .category-container li {
         padding-left: 3px;
         padding-top: 5px;
@@ -210,7 +214,7 @@
         position: absolute;
         bottom: 2px;
         right: 2px;
-        /* hover寫在Jquery */
+        /* hover寫在JS */
     }
     .card-img-top:hover {
         transform: scale(1.2);

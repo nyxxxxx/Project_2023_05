@@ -37,13 +37,15 @@
         <!-- main content -->
         <div class="main-content row col-xl-8 col-md-12 mx-auto">
             <!-- aside -->
-            <aside class="aside col-lg-2 col-md-3 ">
+            <aside class="col-lg-2 col-md-3 ">
+                <div class="sticky-top">
+
                 <!-- 成品類別篩選div -->
                 <div class="category-container">
                     <h6>成品類別</h6>
 
                     <div class="catalog" style="border-top-left-radius: 5px; border-top-right-radius: 5px;">
-                        <a class="text-decoration-none" href="#">飾品</a>
+                        <p>飾品</p>
                     </div>
 
                     <ul class="category-menu list-unstyled">
@@ -52,9 +54,8 @@
                         <li><a class="text-decoration-none" href="#">戒指</a></li>
                     </ul>
 
-
                     <div class="catalog">
-                        <a class="text-decoration-none" href="#">衣裝</a>
+                        <p>衣裝</p>
                     </div>
 
                     <ul class="category-menu list-unstyled">
@@ -63,9 +64,8 @@
                         <li><a class="text-decoration-none" href="#">大衣。外套</a></li>
                     </ul>
 
-
                     <div class="catalog">
-                        <a class="text-decoration-none" href="#">生活雜貨</a>
+                        <p>生活百貨</p>
                     </div>
 
                     <ul class="category-menu list-unstyled">
@@ -76,7 +76,7 @@
 
 
                     <div class="catalog">
-                        <a class="text-decoration-none" href="#">藝術作品</a>
+                        <p>藝術作品</p>
                     </div>
 
                     <ul class="category-menu list-unstyled">
@@ -86,8 +86,8 @@
                     </ul>
 
 
-                    <div class="catalog" >
-                        <a class="text-decoration-none" href="#" >辦公用品</a>
+                    <div class="catalog">
+                        <p>辦公用品</p>
                     </div>
 
                     <ul class="category-menu list-unstyled">
@@ -97,7 +97,6 @@
                     </ul>
 
                 </div>
-                <br>
                 <hr>
                 <!-- 成品類別篩選div -->
                 <div class="category-container">
@@ -110,10 +109,14 @@
                         <li><a href="#" class="text-decoration-none">玻璃</a></li>
                     </ul>
                 </div>
+            </div>
+
             </aside>
             <!-- article -->
             <article class="article col-lg-10 col-md-9">
-                <div class="product-container row d-flex justify-content-around flex-wrap"></div>
+                <div class="product-container row d-flex justify-content-around flex-wrap">
+                    <!-- 商品圖片、資訊在此載入 -->
+                </div>
             </article>
             
         </div>
@@ -133,16 +136,7 @@
             $('.catalog:first').addClass('catalog-active');
             // 宣告to top button
             $('body').append('<button id="fixed-button" class="d-none d-lg-block">Top</button>');
-            $('#fixed-button').hide();
-
-            //分類器切換動畫
-            $('.catalog').click(function () {
-                if (!$(this).hasClass('catalog-active')) {
-                    $('.category-menu').filter(':visible').slideUp('fast').prev().removeClass('catalog-active');
-                    $(this).addClass('catalog-active').next().slideDown('fast');
-                }
-            });
-  
+            
             //所有商品載入
             for(var i = 1 ; i <=30; i++){
                 var number = i;
@@ -159,9 +153,19 @@
                 </div>
                 `);                
             }
+            
+            //分類器切換動畫
+            $('.catalog').click(function () {
+                if (!$(this).hasClass('catalog-active')) {
+                    $('.category-menu').filter(':visible').slideUp('fast').prev().removeClass('catalog-active');
+                    $(this).addClass('catalog-active').next().slideDown('fast');
+                }
+            });
+  
             //heart hover動畫 !!重要 必須要等商品元素生成完成後再指派事件
             $('.heart').mouseenter(function(){
                 $(this).attr('src' , './images/heart-hover.png')
+                $(this).css('cursor' , 'pointer');
             });
             $('.heart').mouseleave(function(){
                 $(this).attr('src' , './images/heart.png')

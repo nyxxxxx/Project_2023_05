@@ -13,12 +13,16 @@
     <!-- bootstrap5.3.0 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <!-- css here -->
     <link rel="stylesheet" href="./css/style.css">
-    <!-- js file here -->
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
     <style>
         .product {
             margin-right: 10px;
@@ -36,13 +40,15 @@
         <!-- main content -->
         <div class="main-content row col-xl-8 col-md-12 mx-auto">
             <!-- aside -->
-            <aside class="aside col-lg-2 col-md-3 ">
+            <aside class="col-lg-2 col-md-3 ">
+                <div class="sticky-top">
+
                 <!-- 成品類別篩選div -->
                 <div class="category-container">
                     <h6>成品類別</h6>
 
                     <div class="catalog" style="border-top-left-radius: 5px; border-top-right-radius: 5px;">
-                        <a class="text-decoration-none" href="#">飾品</a>
+                        <p>飾品</p>
                     </div>
 
                     <ul class="category-menu list-unstyled">
@@ -51,9 +57,8 @@
                         <li><a class="text-decoration-none" href="#">戒指</a></li>
                     </ul>
 
-
                     <div class="catalog">
-                        <a class="text-decoration-none" href="#">衣裝</a>
+                        <p>衣裝</p>
                     </div>
 
                     <ul class="category-menu list-unstyled">
@@ -62,9 +67,8 @@
                         <li><a class="text-decoration-none" href="#">大衣。外套</a></li>
                     </ul>
 
-
                     <div class="catalog">
-                        <a class="text-decoration-none" href="#">生活雜貨</a>
+                        <p>生活百貨</p>
                     </div>
 
                     <ul class="category-menu list-unstyled">
@@ -75,7 +79,7 @@
 
 
                     <div class="catalog">
-                        <a class="text-decoration-none" href="#">藝術作品</a>
+                        <p>藝術作品</p>
                     </div>
 
                     <ul class="category-menu list-unstyled">
@@ -86,7 +90,7 @@
 
 
                     <div class="catalog">
-                        <a class="text-decoration-none" href="#">辦公用品</a>
+                        <p>辦公用品</p>
                     </div>
 
                     <ul class="category-menu list-unstyled">
@@ -96,7 +100,6 @@
                     </ul>
 
                 </div>
-                <br>
                 <hr>
                 <!-- 成品類別篩選div -->
                 <div class="category-container">
@@ -109,6 +112,8 @@
                         <li><a href="#" class="text-decoration-none">玻璃</a></li>
                     </ul>
                 </div>
+            </div>
+
             </aside>
             <!-- article -->
             <article class="article col-lg-10 col-md-9">
@@ -130,32 +135,34 @@
                 </div>
 
                 <!-- Popular-div with h3 slogan-->
+
                 <!-- 熱門商品 -->
                 <h3 style="margin-top: 50px;">熱門商品</h3>
                 <div class="popular-product-container row d-flex justify-content-around flex-wrap">
-                    <swiper-container class="mySwiper2 d-lg-none" slides-per-view="3" space-between="30"
-                        free-mode="true"></swiper-container>
+                    <!-- 筆電、桌電尺寸圖片會在此載入 -->
+
+                    <swiper-container class="mySwiper2 d-lg-none" slides-per-view="3" space-between="30"free-mode="true"> <!-- 輪播器(平板尺寸下出現) -->
+                        <!-- 平板尺寸圖片會在此載入 -->
+                    </swiper-container>
                 </div>
 
-                <!-- 流行話題 from pinkoi-->
+                <!-- 流行話題-div 素材from pinkoi-->
                 <h3>流行話題</h3>
+
+                <!-- 加入兩個card component -->
                 <div class="popular-topics-container row d-flex justify-content-around">
                     <div class="card col-lg-5 col-md-10" style="padding-left: 0; padding-right: 0;">
-                        <div class="card-img-div"><img src="./images/banner/topics01.jpg" class="card-img-top"
-                                alt="..."></div>
+                        <div class="card-img-div"><img src="./images/banner/topics01.jpg" class="card-img-top"alt="topics01"></div>
                         <div class="card-body">
-                            <h5 class="card-title text-truncate">全新的自然棕色系列商品！這個系列汲取了大自然中溫暖、穩定和原始之美的靈感，為您帶來了一系列優質的產品。
-                            </h5>
+                            <h5 class="card-title text-truncate">全新的自然棕色系列商品！這個系列汲取了大自然中溫暖、穩定和原始之美的靈感，為您帶來了一系列優質的產品。</h5>
                             <p class="text-truncate">無論是家居裝飾、時尚配飾還是個人護理，我們的自然棕色系列將為您帶來舒適和風格的完美結合。</p>
                         </div>
                     </div>
 
                     <div class="card col-lg-5 col-md-10" style="padding-left: 0; padding-right: 0;">
-                        <div class="card-img-div"><img src="./images/banner/topics02.jpg" class="card-img-top"
-                                alt="..."></div>
+                        <div class="card-img-div"><img src="./images/banner/topics02.jpg" class="card-img-top"alt="topics02"></div>
                         <div class="card-body">
-                            <h5 class="card-title text-truncate">我們自豪地呈現我們的手工精油香氛系列！這個系列由純天然成分和獨特配方手工製作，旨在為您帶來大自然的純淨和平靜。
-                            </h5>
+                            <h5 class="card-title text-truncate">我們自豪地呈現我們的手工精油香氛系列！這個系列由純天然成分和獨特配方手工製作，旨在為您帶來大自然的純淨和平靜。</h5>
                             <p class="text-truncate">每一款香氛都經過精心調配，讓您能夠享受到舒緩放鬆的體驗。</p>
                         </div>
                     </div>
@@ -165,8 +172,10 @@
                 <!-- 人氣商店 -->
                 <h3>人氣商店</h3>
                 <div class="popular-shop-container row d-flex justify-content-around flex-wrap">
-                    <swiper-container class="mySwiper3 d-lg-none" slides-per-view="2" space-between="30"
-                        free-mode="true"></swiper-container>
+                    <!-- 筆電、桌電尺寸圖片會在此載入 -->
+                    <swiper-container class="mySwiper3 d-lg-none" slides-per-view="2" space-between="30" free-mode="true">
+                        <!-- 平板尺寸圖片會在此載入 -->
+                    </swiper-container>
                 </div>
 
             </article>
@@ -187,19 +196,7 @@
             $('.catalog:first').addClass('catalog-active');
             // 宣告to top button
             $('body').append('<button id="fixed-button" class="d-none d-lg-block">Top</button>');
-            $('#fixed-button').hide();
 
-            //分類器切換動畫
-            $('.catalog').click(function () {
-                if (!$(this).hasClass('catalog-active')) {
-                    $('.category-menu').filter(':visible').slideUp('fast').prev().removeClass('catalog-active');
-                    $(this).addClass('catalog-active').next().slideDown('fast');
-                }
-            });
-            //to top動畫
-            $('#fixed-button').click(function () {
-                $('html, body').stop().scrollTop(0);
-            });
             //熱門商品圖片載入
             for (var i = 1; i <= 10; i++) {
                 var number = i;
@@ -212,6 +209,7 @@
                             <img src="./images/product/product_${number}.jpg" class="card-img-top" alt="...">
                             </a>
                             <img src="./images/heart.png" class="heart" alt="...">
+
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">商品${number}</h5>
@@ -235,7 +233,7 @@
                 `);
             }
             //人氣商店圖片載入
-            for (var i = 12; i <= 14 ; i++) {
+            for (var i = 12; i <= 14; i++) {
                 var number = i;
                 $('.popular-shop-container').append(`
                 
@@ -244,7 +242,6 @@
                                 alt="..."></div>
                         <div class="card-body">
                             <h5 class="card-title">店家${number}&nbsp;&nbsp;information</h5>
-
                         </div>
                 </div>
                 `);
@@ -263,9 +260,22 @@
                 `);
             }
 
+            //分類器切換動畫
+            $('.catalog').click(function () {
+                if (!$(this).hasClass('catalog-active')) {
+                    $('.category-menu').filter(':visible').slideUp('fast').prev().removeClass('catalog-active');
+                    $(this).addClass('catalog-active').next().slideDown('fast');
+                }
+            });
+            //to top動畫
+            $('#fixed-button').click(function () {
+                $('html, body').stop(true , true).scrollTop(0);
+            });
+
             //heart hover動畫
             $('.heart').mouseenter(function () {
                 $(this).attr('src', './images/heart-hover.png')
+                $(this).css('cursor' , 'pointer');
             });
             $('.heart').mouseleave(function () {
                 $(this).attr('src', './images/heart.png')
@@ -276,11 +286,7 @@
 
     </script>
 
-    <!-- resource script-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
     <script src="./js/header_footer.js" async></script>
     <!-- to-top-button -->
 </body>

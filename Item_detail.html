@@ -14,6 +14,9 @@
     <!-- bootstrap5.3.0 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
@@ -41,15 +44,18 @@
 
         /* article css*/
         /* album css */
-        .img-div img{
+        .img-div img {
             border-radius: 3px;
         }
+
         .img-div {
             width: 15%;
         }
+
         .select-color {
-            border:  2px solid orange;
+            border: 2px solid orange;
         }
+
         /* button */
         #btnPrev {
             width: 30px;
@@ -152,6 +158,7 @@
                         </ul>
                         <hr>
                         <div class="container tab-content">
+                            <!-- 詳細介紹 -->
                             <div class="tab">
                                 <p>這款深藍色刺繡手工包包以其精湛的手工工藝和獨特的設計著稱。它採用高品質布料製成，質感柔軟，觸感舒適。每個包包都經過細心的手工刺繡，呈現出精美的花卉、動物等圖案，使其成為一件獨一無二的藝術品。<br><br>
                                     這個包包的尺寸適中，長度為30厘米，寬度為20厘米，高度為10厘米，提供足夠的空間來容納您的必需品，如手機、錢包、化妝品等。它擁有主要的收納間隔，方便整理和存放物品，同時還配有小型拉鍊口袋和側邊或後面口袋，提供額外的收納空間，讓您可以輕鬆有序地組織您的物品。
@@ -160,6 +167,7 @@
                                     請注意，由於每個包包都是手工製作的，圖案和細節可能會略有不同，使每個包包都獨一無二。請在購買前仔細查看產品資訊，以確保您對該款深藍色刺繡手工包包有充分的了解。
                                 </p>
                             </div>
+                            <!-- 規格 -->
                             <div class="tab">
                                 <ol>
                                     <li>尺寸
@@ -227,9 +235,8 @@
         $(document).ready(function () {
             // 宣告to top button
             $('body').append('<button id="fixed-button" class="d-none d-lg-block">Top</button>');
-            $('#fixed-button').hide();
 
-            //詳細規格 &介紹切換JQ
+            //詳細規格 &介紹切換
             $('.tab:first').show();
             $('#tabs li:first').addClass('active');
             $('#tabs li').click(function () {
@@ -240,6 +247,16 @@
                 $('.tab').eq(index).show();
             });
 
+            //Album 載入圖片
+            for (var i = 1; i <= 5; i++) {
+                $('.div-select').append(
+                    `<div class="img-div"><img src="./images/product/item0${i}.jpeg" alt="" class="w-100" id="img-${i}"></div>`
+                );
+            }
+            $(".img-div").children().eq(select).addClass('select-color');
+            iconShow();
+
+            
             //heart hover動畫 !!重要 必須要等商品元素生成完成後再指派事件
             $('.heart').mouseenter(function () {
                 $(this).attr('src', './images/heart-hover.png')
@@ -253,14 +270,7 @@
                 $('html, body').stop().scrollTop(0);
             });
 
-            //Album 載入圖片
-            for (var i = 1; i <= 5; i++) {
-                $('.div-select').append(
-                    `<div class="img-div"><img src="./images/product/item0${i}.jpeg" alt="" class="w-100" id="img-${i}"></div>`
-                );
-            }
-            $(".img-div").children().eq(select).addClass('select-color');
-            iconShow();
+
 
         });
 
@@ -279,8 +289,7 @@
                 $(".select-color").removeClass('select-color');
                 select--;
                 $(".img-div").children().eq(select).addClass('select-color');
-
-                $('#album-img').hide().attr('src', `./images/product/item0${select + 1}.jpeg`).fadeIn(300);
+                $('#album-img').hide().attr('src', `./images/product/item0${select + 1}.jpeg`).stop(true , true).fadeIn(300);
                 iconShow();
                 console.log('select: ' + select);
             }
@@ -290,7 +299,7 @@
             $(".select-color").removeClass('select-color');
             select++;
             $(".img-div").children().eq(select).addClass('select-color');
-            $('#album-img').hide().attr('src', `./images/product/item0${select + 1}.jpeg`).fadeIn(200);
+            $('#album-img').hide().attr('src', `./images/product/item0${select + 1}.jpeg`).stop(true , true).fadeIn(200);
             iconShow();
             console.log('select: ' + select);
         }
@@ -301,11 +310,6 @@
         $("#btnNext").on("click", fnNext);
     </script>
 
-    <!-- resource script-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
-    <!-- to-top-button -->
 </body>
 
 </html>
