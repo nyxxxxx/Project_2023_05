@@ -228,6 +228,10 @@
         transition: 0.3s ease-out;
     }
 
+    .card-title {
+        font-size: 1.1rem;
+    }
+
     /* footer */
     footer {
         margin-top: 50px;
